@@ -37,7 +37,7 @@ app.get("/api/bugs", (req, res, next) => {
 });
 
 //GET method return bug from by id
-app.get("/api/user/:id", (req, res, next) => {
+app.get("/api/bugs/:id", (req, res, next) => {
     var sql = "select * from bugs where id = ?"
     var params = [req.params.id]
     db.get(sql, params, (err, row) => {
@@ -90,7 +90,7 @@ app.post("/api/bugs/", (req, res, next) => {
     });
 })
 
-//PUT method for update filed path
+//PATCH method for update filed path
 app.patch("/api/bugs/:id", (req, res, next) => {
     var data = {
         name: req.body.name,
@@ -98,7 +98,7 @@ app.patch("/api/bugs/:id", (req, res, next) => {
         description: req.body.description
     }
     db.run(
-        `UPDATE user set
+        `UPDATE bugs set
            name = COALESCE(?,name),
            type = COALESCE(?,type),
            description = COALESCE(?,description)
@@ -120,7 +120,7 @@ app.patch("/api/bugs/:id", (req, res, next) => {
 //DELETE method by id
 app.delete("/api/bugs/:id", (req, res, next) => {
     db.run(
-        'DELETE FROM user WHERE id = ?',
+        'DELETE FROM bugs WHERE id = ?',
         req.params.id,
         function (err, result) {
             if (err){

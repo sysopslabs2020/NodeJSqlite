@@ -21,6 +21,7 @@
   "homepage": "https://github.com/sysopslabs2020/NodeJSqlite#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "bootstrap": "^4.4.1",
     "express": "^4.17.1",
     "md5": "^2.2.1",
     "sqlite3": "^4.1.1"

@@ -1,8 +1,9 @@
+//load sqlite3 module and manage error exception
 var sqlite3 = require('sqlite3').verbose()
-var md5 = require('md5')
 
 const DBSOURCE = "db.sqlite"
 
+//The err parameter is null when all OK, Else it contains the error to inform the user (err.message)
 let db = new sqlite3.Database(DBSOURCE, (err) => {
     if (err) {
       // Cannot open database
@@ -13,7 +14,7 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
         db.run(`CREATE TABLE bugs (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name text,
-            type text UNIQUE,
+            type text,
             description text,
             timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
             )`,
@@ -23,12 +24,11 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
             }else{
                 // Table just created, creating some rows
                 var insert = 'INSERT INTO bugs (name, type, description, timestamp) VALUES (?,?,?,?)'
-                db.run(insert, ["dev","High","Production Problem"])
-                db.run(insert, ["admin","Low","Dev Problem"])
+                db.run(insert, ["Pippo","High","Production Problem"])
+                db.run(insert, ["Mario","Low","Dev Problem"])
             }
         });
     }
 });
-
-
+// Now "export" the database connection object "db" to be imported in another script (server.js)
 module.exports = db
