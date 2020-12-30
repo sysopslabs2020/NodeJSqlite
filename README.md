@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 # NodeJS - Sqlite3 - Express - Bootstrap - Rest API 
 ### "Simple Bug Manager App with Rest API"
 ## NO WARRANTY for any damages and loss of data.
 Quick start Requirements:
+=======
+#Simple NodeJS Sqlite3 Nodemon Express Rest API Project
+## NO WARRANTY for any damages and loss of data.
+>>>>>>> 94c85a144a161d7e845588352770abc7e1027008
 
 If you haven’t installed Node.js, visit https://nodejs.org/it/download/ for download and installation instructions.
 
