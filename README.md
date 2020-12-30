@@ -1,6 +1,7 @@
 # NodeJS - Sqlite3 - Express - Bootstrap - Rest API 
 ### "Simple Bug Manager App with Rest API"
 ## NO WARRANTY for any damages and loss of data.
+
 Quick start Requirements:
 =======
 #Simple NodeJS Sqlite3 Nodemon Express Rest API Project
